@@ -6,38 +6,44 @@ import styles from "./Register.module.css";
 // Link
 import { Link } from "react-router-dom";
 
+// icons
+import { MdOutlineMail } from "react-icons/md";
+import { BiLock } from "react-icons/bi"
+
 function Register() {
   return (
     <section id={styles.register}>
-      <div className={styles.form_section}>
-        <h1>Sign Up</h1>
 
-        <form className={styles.form}>
-          <label>
-            <span>Username</span>
-            <input type="text" />
-          </label>
+      <section className={styles.register}>
+        <header>
+          <h2>Create an account here</h2>
+          <p>Create an account and manage your business stocks.</p>
+        </header>
 
-          <label>
-            <span>E-mail</span>
-            <input type="text" />
-          </label>
+        <form>
+          <input type="text" placeholder="Username" />
 
-          <label>
-            <span>Password</span>
-            <input type="password" />
-          </label>
+          <div>
+            <MdOutlineMail className={styles.icon}/>
+            <input type="text" placeholder="E-mail" />
+          </div>
+          <div>
+            <BiLock className={styles.icon}/>
+            <input type="password" placeholder="Password" />
+          </div>
+          <div>
+            <BiLock className={styles.icon}/>
+            <input type="password" placeholder="Confirm Password" />
+          </div>
 
-          <label>
-            <span>Confirm password</span>
-            <input type="password" />
-          </label>
-
-          <button className={styles.submit}>Sign up</button>
+          <button>Sign Up</button>
         </form>
 
-        <h5 className={styles.link}>Already have an account? <Link to="/login">Click here</Link></h5>
-      </div>
+        <h4>Don't have an account? <Link to="/login">Create an account</Link></h4>
+      </section>
+
+      
+
     </section>
   );
 }
