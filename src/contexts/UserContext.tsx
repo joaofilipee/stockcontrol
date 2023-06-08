@@ -1,4 +1,4 @@
-import { ReactNode, SetStateAction, createContext, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 // firebase types
 import { User } from "firebase/auth";
@@ -14,11 +14,8 @@ interface IUserContext {
 
 export const UserContext = createContext<IUserContext>({
     user: null,
-    setUser: function (value: SetStateAction<User | null>): void {
-        throw new Error("Function not implemented.");
-    }
+    setUser: () => {}
 })
-
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
     const [user, setUser] = useState<User | null>(null)
