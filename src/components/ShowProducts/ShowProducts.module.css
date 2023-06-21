@@ -1,0 +1,17 @@
+.show_products {
+    margin-top: 3em;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+
+    width: 85%;
+
+    padding-right: 4em;
+    padding-bottom: 1em;
+
+    margin-bottom: 1.3em;
+
+    border-bottom: 2px solid #f1f0f0;
+}

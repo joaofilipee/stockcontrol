@@ -5,3 +5,10 @@
   
   font-family: 'Lato', sans-serif;
 }
+
+.main_content {
+  padding: 2em 2.3em;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  grid-gap: 1.5em;
+}

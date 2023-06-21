@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.navbar .route {
+    font-size: 1.23em;
+    color: #15343d;
+    opacity: .7;
+    font-family: 'Lato', sans-serif;
+
+    position: relative;
+    margin-left: 1.3em;
+    transition: all;
+    transition-duration: .2s;
+}
+
+.route_section label div a {
+    display: block;
+    width: 100%;
+}
+
+.route_section label div {
+    transition: all;
+    transition-duration: .2s;
+
+    border-radius: 4px;
+
+    padding: .3em;
+    width: 100%;
+}
+
+.route_section label div:hover {
+    background-color: #69658d;
+    opacity: .6;
+}
+.route_section label div:hover a {
+    color: #FFF;
+    opacity: 1;
+}
+
+.route_section label{
+    display: flex;
+    flex-direction: column;
+    gap: .6em;
+}
+
+.route_section label span {
+    font-size: 1.1em;
+    opacity: .7;
+
+    font-family: 'Lato', sans-serif;
+}

@@ -14,9 +14,11 @@ import { auth } from "./firebase/firebase";
 function App() {
   const { setUser } = useContext(UserContext);
 
-  onAuthStateChanged(auth, async(newUser) => {
+  onAuthStateChanged(auth, (newUser) => {
     if(newUser) {
       setUser(newUser)
+    } else {
+      setUser(null)
     }
   })
 

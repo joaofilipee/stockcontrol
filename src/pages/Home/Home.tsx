@@ -1,24 +1,25 @@
 import { useContext } from 'react'
-// firebase
-import { signOut } from 'firebase/auth'
-import { auth } from '../../firebase/firebase'
+
+// styles
+import styles from "./Home.module.css"
 
 // context
 import { UserContext } from '../../contexts/UserContext'
+import Header from '../../components/Header/Header'
+import Navbar from '../../components/Navbar/Navbar'
 
 const Home = () => {
-    const { setUser } = useContext(UserContext)
-
-    const handleLogout = () => {
-        signOut(auth).then(() => {
-            setUser(null)
-        })
-    }
+    const { user } = useContext(UserContext)
 
   return (
     <div>
-        <h1>Home</h1>
-        <button onClick={handleLogout}>Log out</button>
+        <Header user={user}/>
+
+        <div className="main_content">
+          <Navbar />
+
+          <h1>Home</h1>
+        </div>
     </div>
   )
 }
