@@ -2,6 +2,17 @@
     margin-top: 3em;
 }
 
+.products_header {
+    margin-bottom: 1.3em;
+    font-weight: bold;
+
+    width: 85%;
+
+    padding-bottom: .7em;
+
+    border-bottom: 2px solid #f1f0f0;
+}
+
 .product {
     display: flex;
     justify-content: space-between;

@@ -11,6 +11,7 @@ import { ProductsContext } from "./ProductsContext"
 
 interface IUserDocs {
     documents: QuerySnapshot<DocumentData> | null
+    setDocuments: React.Dispatch<React.SetStateAction<QuerySnapshot<DocumentData> | null>>
 }
 
 interface IUserDocsProvider {
@@ -18,7 +19,8 @@ interface IUserDocsProvider {
 }
 
 export const UserDocsContext = createContext<IUserDocs>({
-    documents: null
+    documents: null,
+    setDocuments: () => {}
 })
 
 const UserDocsContextProvider = ({children}: IUserDocsProvider) => {
@@ -39,7 +41,7 @@ const UserDocsContextProvider = ({children}: IUserDocsProvider) => {
     }, [user, product])
 
     return(
-        <UserDocsContext.Provider value={{documents}}>
+        <UserDocsContext.Provider value={{documents, setDocuments}}>
             {children}
         </UserDocsContext.Provider>
     )

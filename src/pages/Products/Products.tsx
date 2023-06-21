@@ -6,21 +6,18 @@ import Header from "../../components/Header/Header"
 import Navbar from "../../components/Navbar/Navbar"
 import ShowProducts from "../../components/ShowProducts/ShowProducts"
 
-
 // firebase
 import { db } from "../../firebase/firebase"
-import { DocumentData, QuerySnapshot, addDoc, collection, getDocs } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 
 // context & hooks
 import { UserContext } from "../../contexts/UserContext"
 import { ProductsContext } from "../../contexts/ProductsContext"
-import { ChangeEvent, FormEvent, useContext, useRef, useState, useMemo } from "react"
-import { UserDocsContext } from "../../contexts/UserDocsContext"
+import { ChangeEvent, FormEvent, useContext, useRef, useState } from "react"
 
 const Products = () => {
     const { user } = useContext(UserContext)
-    const { product, setProduct } = useContext(ProductsContext)
-    const { documents } = useContext(UserDocsContext)
+    const { setProduct } = useContext(ProductsContext)
 
     const [title, setTitle] = useState<string>("")
 
