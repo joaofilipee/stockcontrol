@@ -61,7 +61,7 @@ const Products = () => {
                     <button ref={buttonRef}>Register</button>
                 </form>
                 
-                <ShowProducts />
+                <ShowProducts deleteOption={true}/>
             </div>
         </div>
 

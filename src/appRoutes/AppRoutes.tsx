@@ -12,6 +12,7 @@ import Home from "../pages/Home/Home"
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
 import Products from '../pages/Products/Products'
+import Balance from '../pages/Balance/Balance'
 
 
 function AppRoutes() {
@@ -23,6 +24,7 @@ function AppRoutes() {
             <Route path='/' element={user ? <Products /> : <Navigate to="/login"/>}/>
             <Route path='/login' element={user ? <Navigate to="/"/> : <Login />} />
             <Route path='/register' element={user ? <Navigate to="/" /> : <Register />} />
+            <Route path='/balance' element={user ? <Balance /> : <Navigate to="/login"/>}/>
         </Routes>
     </BrowserRouter>
   )

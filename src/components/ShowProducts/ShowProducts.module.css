@@ -11,6 +11,11 @@
     padding-bottom: .7em;
 
     border-bottom: 2px solid #f1f0f0;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-right: 2em;
 }
 
 .product {
