@@ -39,6 +39,7 @@ const Products = () => {
         }
 
         const newProduct = { title, qty: 0 }
+        
         setProduct(state => {
             return [...state, newProduct]
         })

@@ -1,10 +1,9 @@
 import React, { createContext, useState } from "react";
 
-export interface IProduct {
+interface IProduct {
     title: string
     qty: number
 }
-
 
 interface IProducts {
     product: IProduct[] | null
@@ -21,7 +20,7 @@ export const ProductsContext = createContext<IProducts>({
 })
 
 const ProductsContextProvider = ({children}: IProductsProvider) => {
-    const [product, setProduct] = useState<IProduct[]>([{title: "", qty: 0}])
+    const [product, setProduct] = useState<IProduct[]>([])
 
     return(
         <ProductsContext.Provider value={{product, setProduct}}>

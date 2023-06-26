@@ -22,7 +22,7 @@ const ShowProducts = ({deleteOption}: IShowProducts) => {
         <div>
           <header className={styles.products_header}>
             <div>TITLE</div>
-            <div>AMOUNT</div>
+            {!deleteOption && <div>AMOUNT</div>}
           </header>
           
           {documents?.docs && documents.docs.map(doc => (
