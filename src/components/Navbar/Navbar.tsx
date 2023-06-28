@@ -30,7 +30,7 @@ const Navbar = () => {
           </div>
 
           <div>
-            <NavLink to="/manageprodcts" className={styles.route}>Manage Products</NavLink>
+            <NavLink to="/manageproducts" className={styles.route}>Manage Products</NavLink>
           </div>
           
         </label>

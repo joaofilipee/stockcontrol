@@ -1,0 +1,45 @@
+.update_form {
+    display: flex;
+    justify-content: space-between;
+
+    width: 85%;
+}
+
+
+.update_form select {
+    appearance: none;
+    height: 2.5em;
+
+    width: 14em;
+    padding: .4em 1em;
+
+    border: 1px solid #d8d6d6;
+    
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.update_form select:focus {
+    outline: none;
+}
+
+.amount {
+    font-size: 1em;
+    padding-left: 10px;
+    height: 2.5em;
+}
+
+.save {
+    
+}
+
+.update_type {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.update_type label {
+    display: flex;
+    align-items: center;
+}

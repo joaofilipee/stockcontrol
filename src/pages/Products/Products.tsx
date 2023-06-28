@@ -48,6 +48,8 @@ const Products = () => {
 
         formButton.innerHTML = "Register"
         formButton.disabled = false
+
+        setTitle("")
     }
   return (
     <section>
@@ -58,7 +60,7 @@ const Products = () => {
 
             <div>
                 <form onSubmit={handleSubmit} className={styles.register_product_form}>
-                    <input type="text" placeholder="Product name" onChange={handleChange}/>
+                    <input type="text" placeholder="Product name" value={title} onChange={handleChange}/>
                     <button ref={buttonRef}>Register</button>
                 </form>
                 
