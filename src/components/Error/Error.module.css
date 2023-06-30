@@ -1,0 +1,15 @@
+.error {
+    position: absolute;
+    top: 3em;
+
+    width: 50%;
+
+    display: none;
+    justify-content: center;
+
+    background-color: rgb(219, 65, 65);
+
+    padding: 13px 1em;
+
+    border-radius: 5px;
+}

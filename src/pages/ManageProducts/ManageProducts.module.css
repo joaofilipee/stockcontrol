@@ -1,10 +1,12 @@
 .update_form {
     display: flex;
-    justify-content: space-between;
+
+    flex-direction: column;
 
     width: 85%;
-}
 
+    flex-wrap: wrap;
+}
 
 .update_form select {
     appearance: none;
@@ -27,10 +29,48 @@
     font-size: 1em;
     padding-left: 10px;
     height: 2.5em;
+    width: 14em;
+
+    border: 1px solid #d8d6d6;
 }
 
-.save {
-    
+.amount::-webkit-inner-spin-button, .amount::-webkit-outer-spin-button {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    -webkit-appearance: none;
+}
+
+.update_form .save {
+    padding: .4em 3.5em;
+    width: 14em;
+
+    border-radius: 4px;
+    border: 1px solid #ccc8c8;
+
+    background-color: #f6f6f6;
+
+    cursor: pointer;
+
+    font-size: 1em;
+
+    transition: all;
+    transition-duration: .3s;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.types {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 1em;
+}
+
+.update_form .save:hover {
+    background-color: #6eca9f;
 }
 
 .update_type {
@@ -42,4 +82,17 @@
 .update_type label {
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 776px) {
+    .inputs, .types {
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .update_type {
+        flex-direction: row;
+        gap: 2em;
+    }
 }
