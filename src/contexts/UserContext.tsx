@@ -9,19 +9,24 @@ interface UserContextProviderProps {
 
 interface IUserContext {
     user: User | null
+    displayName: string
+    setDisplayName: React.Dispatch<React.SetStateAction<string>>
     setUser: React.Dispatch<React.SetStateAction<User | null>>
 }
 
 export const UserContext = createContext<IUserContext>({
     user: null,
+    displayName: "",
+    setDisplayName: () => {},
     setUser: () => {}
 })
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
     const [user, setUser] = useState<User | null>(null)
+    const [displayName, setDisplayName] = useState<string>("")
 
     return(
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{user, setUser, displayName, setDisplayName}}>
             {children}
         </UserContext.Provider>
     )

@@ -1,20 +1,20 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState, useContext } from "react";
 
-// CSS
 import styles from "./Login.module.css";
 
-// Link
 import { Link } from "react-router-dom";
 
-// icons
 import { MdOutlineMail } from "react-icons/md";
 import { BiLock } from "react-icons/bi"
 
-// firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 
+import { UserContext } from "../../contexts/UserContext";
+
 function Register() {
+  const { setUser } = useContext(UserContext)
+
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
@@ -22,6 +22,7 @@ function Register() {
       e.preventDefault()
 
       signInWithEmailAndPassword(auth, email, password)
+      .then((currentUser) => setUser(currentUser.user))
       .catch(() => {
         alert("User not found!")
       })

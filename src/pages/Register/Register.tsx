@@ -1,26 +1,26 @@
-import{ ChangeEvent, FormEvent, useState } from "react";
+import{ ChangeEvent, FormEvent, useState, useContext } from "react";
 
-// CSS
 import styles from "./Register.module.css";
 
-// Link
 import { Link } from "react-router-dom";
 
-// icons
 import { MdOutlineMail } from "react-icons/md";
 import { BiLock } from "react-icons/bi"
 
-// firebase
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase/firebase"
 
+import { UserContext } from "../../contexts/UserContext"
+
 function Register() {
+  const { setDisplayName } = useContext(UserContext)
+
   const [userName, setUserName] = useState<string>("")
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [confirmPassword, setConfirmPassword] = useState<string>("")
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async(e: FormEvent) => {
     e.preventDefault()
 
     if(userName.length < 3) {
@@ -30,19 +30,10 @@ function Register() {
       return alert("Your password is different.")
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(newUser => {
-        updateProfile(newUser.user, {
-          displayName: userName
-        })
-        .catch(() => alert("An error has ocurred."))
-
-      })
-      .catch((error) => {
-        if(error.message.indexOf("email") != -1) {
-          alert("E-mail already in use or invalid format.")
-        }
-      })
+    const registeredUser = await createUserWithEmailAndPassword(auth, email, password)
+    updateProfile(registeredUser.user, {
+      displayName: userName
+    }).then(() => setDisplayName(userName))
   }
 
 

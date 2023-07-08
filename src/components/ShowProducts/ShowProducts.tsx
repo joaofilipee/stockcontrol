@@ -30,7 +30,15 @@ const ShowProducts = ({deleteOption}: IShowProducts) => {
             <div key={doc.id} className={styles.product}>
               <p>{doc.data().title}</p>
 
-              {deleteOption ? <DeleteButton docId={doc.id}/> : doc.data().qty}
+              {deleteOption ? <DeleteButton docId={doc.id}/> : (
+                <p>
+                  {doc.data().qty > 999 ? "999+" : 
+                  ( 
+                    doc.data().qty < -999 ? "-999" : 
+                    doc.data().qty
+                )}
+                </p>
+              )}
             </div>
           ))}
         </div>

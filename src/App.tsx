@@ -17,7 +17,8 @@ function App() {
   onAuthStateChanged(auth, (newUser) => {
     if(newUser) {
       setUser(newUser)
-    } else {
+    }
+    else {
       setUser(null)
     }
   })

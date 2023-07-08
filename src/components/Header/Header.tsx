@@ -1,22 +1,21 @@
-// styles
 import styles from "./Header.module.css"
 
-// firebase
 import { User, signOut } from 'firebase/auth'
 import { auth } from "../../firebase/firebase"
 
-// hooks
-import { useRef } from "react"
+import { useRef, useContext } from "react"
 
-// icons
 import { BsFillBoxSeamFill } from "react-icons/bs"
 import { BiLogOutCircle } from "react-icons/bi"
+
+import { UserContext } from "../../contexts/UserContext"
 
 interface NavbarProps {
     user: User | null
 }
 
 const Header = ({ user } : NavbarProps) => {
+    const { displayName } = useContext(UserContext)
 
     const signOutRef = useRef<HTMLDivElement>(null)
 
@@ -36,7 +35,7 @@ const Header = ({ user } : NavbarProps) => {
         <BsFillBoxSeamFill className={styles.icon}/>
 
         <aside className={styles.userBar}>
-            <button onClick={handleShowSignOutButton} className={styles.username}>{user?.displayName}</button>
+            <button onClick={handleShowSignOutButton} className={styles.username}>{displayName ? displayName : user?.displayName}</button>
 
             <div className={styles.options} ref={signOutRef} onClick={handleLogOut}>
                 <BiLogOutCircle className={styles.logout_svg}/>

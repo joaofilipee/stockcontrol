@@ -12,7 +12,6 @@ import { ProductsContext } from '../../contexts/ProductsContext'
 
 import { doc, updateDoc, getDoc } from "firebase/firestore"
 import { db } from '../../firebase/firebase'
-import { stat } from 'fs'
 
 
 const ManageProducts = () => {
@@ -58,7 +57,7 @@ const ManageProducts = () => {
             const docSnap = await getDoc(documentRef)
 
             await updateDoc(documentRef, {
-                qty: Number(amount) + docSnap.data()!.qty
+                qty: docSnap.data()!.qty + Number(amount)
             })
 
             setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
@@ -68,12 +67,12 @@ const ManageProducts = () => {
             const docSnap = await getDoc(documentRef)
 
             await updateDoc(documentRef, {
-                qty: Number(amount) - docSnap.data()!.qty
+                qty: docSnap.data()!.qty - Number(amount)
             })
 
             setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
         }
-        
+
         saveButtonRef.current!.innerHTML = "Save"
         saveButtonRef.current!.disabled = false
     }
