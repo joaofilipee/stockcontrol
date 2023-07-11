@@ -45,3 +45,13 @@
         width: 100%;
     }
 }
+
+@media (max-width: 780px) {
+    .product, .products_header {
+        width: 100%;
+        padding-right: 0;
+    }
+    .product {
+        padding-right: 10px;
+    }
+}
