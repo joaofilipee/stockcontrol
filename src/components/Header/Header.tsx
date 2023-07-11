@@ -6,9 +6,11 @@ import { auth } from "../../firebase/firebase"
 import { useRef, useContext } from "react"
 
 import { BsFillBoxSeamFill } from "react-icons/bs"
-import { BiLogOutCircle } from "react-icons/bi"
+import { BiLogOutCircle, BiMenu } from "react-icons/bi"
+
 
 import { UserContext } from "../../contexts/UserContext"
+import { NavbarRefContext } from "../../contexts/NavbarRefContext"
 
 interface NavbarProps {
     user: User | null
@@ -16,6 +18,7 @@ interface NavbarProps {
 
 const Header = ({ user } : NavbarProps) => {
     const { displayName } = useContext(UserContext)
+    const { navbarRef } = useContext(NavbarRefContext)
 
     const signOutRef = useRef<HTMLDivElement>(null)
 
@@ -24,15 +27,25 @@ const Header = ({ user } : NavbarProps) => {
         signOutRef.current!.style.opacity = displayValue !== "1" ? "1" : "0"
     }
 
-    const handleLogOut = (e: React.MouseEvent) => {
+    const handleLogOut = () => {
         if(signOutRef.current!.style.opacity === "1"){
             signOut(auth)
         }
     }
 
+    const showNavbar = () => {
+        let navbarDisplay = navbarRef?.current.style.display
+
+        navbarRef!.current.style.display = navbarDisplay !== "flex" ? "flex" : "none"
+        navbarRef!.current.style.marginLeft = "0px"
+    }
+
   return (
     <header className={styles.header}>
-        <BsFillBoxSeamFill className={styles.icon}/>
+        <div className={styles.icons}>
+            <BiMenu className={styles.mobile_menu} onClick={showNavbar}/>
+            <BsFillBoxSeamFill className={styles.box_icon}/>
+        </div>
 
         <aside className={styles.userBar}>
             <button onClick={handleShowSignOutButton} className={styles.username}>{displayName ? displayName : user?.displayName}</button>

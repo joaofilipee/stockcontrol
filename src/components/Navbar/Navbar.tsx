@@ -1,14 +1,17 @@
-import React from 'react'
-
 import styles from "./Navbar.module.css"
 
-// router
+import { useContext } from "react"
+
 import { NavLink } from 'react-router-dom'
 
+import { NavbarRefContext } from "../../contexts/NavbarRefContext"
+
 const Navbar = () => {
+  const { navbarRef } = useContext(NavbarRefContext)
+  
   return (
 
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} ref={navbarRef}>
         
       <section className={styles.route_section}>
         <label>

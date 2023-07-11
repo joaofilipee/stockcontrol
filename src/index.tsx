@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from './contexts/UserContext';
 import ProductsContextProvider from './contexts/ProductsContext';
 import UserDocsContextProvider from './contexts/UserDocsContext';
+import NavbarRefProvider from './contexts/NavbarRefContext';
 
 
 const root = ReactDOM.createRoot(
@@ -19,7 +20,11 @@ root.render(
       <ProductsContextProvider>
 
         <UserDocsContextProvider>
-          <App />
+
+          <NavbarRefProvider>
+            <App />
+          </NavbarRefProvider>
+          
         </UserDocsContextProvider>
         
       </ProductsContextProvider>

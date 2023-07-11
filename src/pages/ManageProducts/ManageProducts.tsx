@@ -79,7 +79,7 @@ const ManageProducts = () => {
 
   return (
     <section>
-        <Header user={user}/>
+        <Header user={user} />
 
         <section className="main_content">
             <Navbar />

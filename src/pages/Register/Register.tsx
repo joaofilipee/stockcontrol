@@ -36,8 +36,6 @@ function Register() {
     }).then(() => setDisplayName(userName))
   }
 
-
-  
   return (
     <section id={styles.register}>
 

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'

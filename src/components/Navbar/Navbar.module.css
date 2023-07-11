@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
+
+    transition: all;
+    transition-duration: .2s;
 }
 
 .navbar .route {
@@ -28,7 +31,7 @@
     border-radius: 4px;
 
     padding: .3em;
-    width: 85%;
+    width: 100%;
 }
 
 .route_section label div:hover {
@@ -51,4 +54,21 @@
     opacity: .7;
 
     font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 780px) {
+    .navbar {
+        overflow: hidden;
+        text-overflow: clip;
+        position: absolute;
+        display: none;
+        left: 2em;
+        width: 200px;
+    }
+}
+
+@media (min-width: 781px) {
+    .navbar {
+        display: flex !important;
+    }
 }

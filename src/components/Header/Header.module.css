@@ -7,12 +7,25 @@
     border-bottom: 2px solid #9c9b9b;
 }
 
-.icon {
+.icons {
+    display: flex;
+    align-items: center;
+
+    gap: 1em;
+}
+
+.mobile_menu {
+    display: none;
+    font-size: 2.4em;
+    cursor: pointer;
+}
+
+.box_icon {
     font-size: 2.4em;
     color: #946834;
 }
 
-.icon path {
+.box_icon path {
     background-color: red;
 }
 
@@ -67,4 +80,10 @@
 .logout_svg {
     color: rgb(219, 50, 50);
     font-size: 1.1em;
+}
+
+@media (max-width: 780px) {
+    .mobile_menu {
+        display: block;
+    }
 }

@@ -12,3 +12,18 @@
   grid-template-columns: 1fr 3.5fr;
   grid-gap: 1.5em;
 }
+
+@media (max-width: 780px) {
+  .main_content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    padding: 1.6em 1.9em;
+  }
+}
+
+@media (max-width: 420px) {
+  .main_content {
+    padding: 2em .7em;
+  }
+}

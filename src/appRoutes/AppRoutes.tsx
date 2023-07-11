@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 // pages
 import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
-import Home from "../pages/Home/Home"
 
 // context
 import { useContext } from 'react'

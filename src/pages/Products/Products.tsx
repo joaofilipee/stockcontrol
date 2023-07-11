@@ -53,7 +53,7 @@ const Products = () => {
     }
   return (
     <section>
-        <Header user={user}/>
+        <Header user={user} />
 
         <div className="main_content">
             <Navbar />
@@ -61,7 +61,7 @@ const Products = () => {
             <div>
                 <form onSubmit={handleSubmit} className={styles.register_product_form}>
                     <input type="text" placeholder="Product name" value={title} onChange={handleChange}/>
-                    <button ref={buttonRef}>Register</button>
+                    <button ref={buttonRef} >Register</button>
                 </form>
                 
                 <ShowProducts deleteOption={true}/>

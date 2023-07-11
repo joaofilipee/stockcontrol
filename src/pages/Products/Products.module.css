@@ -34,3 +34,15 @@
 .register_product_form button:hover {
     background-color: #9c9b9b;
 }
+
+@media (max-width: 604px) {
+    .register_product_form {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 365px) {
+    .register_product_form input {
+        width: 100%;
+    }
+}
