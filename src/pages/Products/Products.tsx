@@ -35,6 +35,8 @@ const Products = () => {
         formButton.innerHTML = "Loading..."
 
         if(title.length < 1){
+            formButton.innerHTML = "Register"
+            formButton.disabled = false
             return alert("at least 1 character to the product name field.")
         }
 
