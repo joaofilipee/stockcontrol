@@ -13,3 +13,11 @@
 
     border-radius: 5px;
 }
+
+@media (max-width: 776px) {
+    .error {
+        left: 0;
+        padding: 1em;
+        width: 100%;
+    }
+}

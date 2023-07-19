@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 
 // styles
 import styles from "./DeleteButton.module.css"
@@ -16,17 +16,21 @@ interface ButtonDeleteProps {
 }
 
 const DeleteButton = ({docId}: ButtonDeleteProps) => {
+  const deleteBtnRef = useRef<HTMLButtonElement>(null)
+
     const { user } = useContext(UserContext)
     const { setDocuments } = useContext(UserDocsContext)
 
     const deleteProduct = async(e: React.MouseEvent) => {
+        deleteBtnRef.current!.innerHTML = "Loading..."
+
         await deleteDoc(doc(db, user!.uid, docId))
         
         setDocuments(await getDocs(collection(db, user!.uid)))
     }
 
   return (
-    <button className={styles.delete_btn} onClick={deleteProduct}>DELETE</button>
+    <button className={styles.delete_btn} onClick={deleteProduct} ref={deleteBtnRef}>DELETE</button>
   )
 }
 

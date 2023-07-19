@@ -85,4 +85,7 @@
     .mobile_menu {
         display: block;
     }
+    .username:hover {
+        color: unset;
+    }
 }

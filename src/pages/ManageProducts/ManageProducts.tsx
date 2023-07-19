@@ -30,6 +30,10 @@ const ManageProducts = () => {
 
     const showErrorMessage = (message: string) => {
         setErrorMessage(message)
+
+        saveButtonRef.current!.innerHTML = "Save"
+        saveButtonRef.current!.disabled = false
+
         errorRef.current!.style.display = "flex"
 
         setTimeout(() => {
@@ -53,24 +57,37 @@ const ManageProducts = () => {
         }
 
         if(radioRef.current!.checked) {
-            const documentRef = doc(db, user!.uid, selectRef.current!.value)
-            const docSnap = await getDoc(documentRef)
+            
+            try {
+                const documentRef = doc(db, user!.uid, selectRef.current!.value)
+            
+                const docSnap = await getDoc(documentRef)
 
-            await updateDoc(documentRef, {
-                qty: docSnap.data()!.qty + Number(amount)
-            })
+                await updateDoc(documentRef, {
+                    qty: docSnap.data()!.qty + Number(amount)
+                })
 
-            setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
+                setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
+            } catch (error) {
+                return showErrorMessage("No product selected!")
+            }
             
         } else {
-            const documentRef = doc(db, user!.uid, selectRef.current!.value)
-            const docSnap = await getDoc(documentRef)
+            try {
+                const documentRef = doc(db, user!.uid, selectRef.current!.value)
+                const docSnap = await getDoc(documentRef)
 
-            await updateDoc(documentRef, {
-                qty: docSnap.data()!.qty - Number(amount)
-            })
+                await updateDoc(documentRef, {
+                    qty: docSnap.data()!.qty - Number(amount)
+                })
 
-            setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
+                setProduct([{title: docSnap.data()!.title, qty: docSnap.data()!.qty}])
+            } catch (error) {
+                saveButtonRef.current!.innerHTML = "Save"
+                saveButtonRef.current!.disabled = false
+
+                return showErrorMessage("No product selected!")
+            }
         }
 
         saveButtonRef.current!.innerHTML = "Save"

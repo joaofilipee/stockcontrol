@@ -54,4 +54,13 @@
     .product {
         padding-right: 10px;
     }
+
+    .products_header {
+        display: flex;
+    }
+
+    .amount {
+        margin-right: .8em;
+    }
+    
 }

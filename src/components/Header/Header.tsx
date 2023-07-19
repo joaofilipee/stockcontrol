@@ -34,10 +34,7 @@ const Header = ({ user } : NavbarProps) => {
     }
 
     const showNavbar = () => {
-        let navbarDisplay = navbarRef?.current.style.display
-
-        navbarRef!.current.style.display = navbarDisplay !== "flex" ? "flex" : "none"
-        navbarRef!.current.style.marginLeft = "0px"
+        navbarRef!.current.style.width = "100%"
     }
 
   return (

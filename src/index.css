@@ -15,10 +15,17 @@
 
 @media (max-width: 780px) {
   .main_content {
+    margin-top: 2em;
+
     grid-template-columns: 1fr;
     justify-items: center;
 
     padding: 1.6em 1.9em;
+  }
+
+  .main_content div {
+    width: 100%;
+    align-content: center;
   }
 }
 

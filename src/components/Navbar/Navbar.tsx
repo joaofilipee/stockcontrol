@@ -12,7 +12,7 @@ const Navbar = () => {
   const { navbarRef } = useContext(NavbarRefContext)
 
   const handleCloseMenu = () => {
-    navbarRef!.current.style.display = "none"
+    navbarRef!.current.style.width = "0%"
   }
   
   return (
@@ -20,7 +20,9 @@ const Navbar = () => {
     <nav className={styles.navbar} ref={navbarRef}>
       <AiOutlineClose className={styles.close_menu} onClick={handleCloseMenu}/>
         
-      <section className={styles.route_section}>
+      <div className={styles.blur}></div>
+
+      <section className={`${styles.route_section} ${styles.register_route}`}>
         <label>
           <span>Products Registration</span>
 

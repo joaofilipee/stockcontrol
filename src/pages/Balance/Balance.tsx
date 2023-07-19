@@ -1,4 +1,6 @@
-import { useContext, useRef } from 'react'
+import { useContext } from 'react'
+
+import styles from "./Balance.module.css"
 
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
@@ -16,7 +18,7 @@ const Balance = () => {
         <div className="main_content">
             <Navbar />
 
-            <div>
+            <div className={styles.balance}>
                 <h2>Here you can see your products</h2>
                 <ShowProducts deleteOption={false}/>
             </div>

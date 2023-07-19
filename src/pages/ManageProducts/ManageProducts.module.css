@@ -84,15 +84,24 @@
     align-items: center;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 780px) {
     .inputs, .types {
         align-items: center;
         flex-direction: column;
         gap: 2em;
     }
 
+    .types {
+        justify-content: center;
+    }
+
+    .update_form {
+        width: 100%;
+    }
+
     .update_type {
         flex-direction: row;
         gap: 2em;
+        justify-content: center;
     }
 }

@@ -1,0 +1,7 @@
+@media (max-width: 780px) {
+    .balance {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

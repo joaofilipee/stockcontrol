@@ -21,8 +21,8 @@ const ShowProducts = ({deleteOption}: IShowProducts) => {
     <section className={styles.show_products}>
         <div>
           <header className={styles.products_header}>
-            <div>TITLE</div>
-            {!deleteOption && <div>AMOUNT</div>}
+            <p>TITLE</p>
+            {!deleteOption && <p>AMOUNT</p>}
           </header>
           
           {documents?.docs && documents.docs.map(doc => (
@@ -31,7 +31,7 @@ const ShowProducts = ({deleteOption}: IShowProducts) => {
               <p>{doc.data().title}</p>
 
               {deleteOption ? <DeleteButton docId={doc.id}/> : (
-                <p>
+                <p className={styles.amount}>
                   {doc.data().qty > 999 ? "999+" : 
                   ( 
                     doc.data().qty < -999 ? "-999" : 
