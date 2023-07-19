@@ -1,44 +1,4 @@
-
-
-# Stock Control App
-Manage your products. 
-<br /> <br />
-In this application you can manage your products by: setting new products, updating your products, reading <br /> your products and deleting them.
-
-
-## Technologies
-
-Here are the technologies I used in this project.
-
-* React-JS version  18.2.0
-* JavaScript version ES6
-* Typescript version 4.9.5
-* CSS version 3
-* HTML version 5
-
-## Services Used
-
-* Github
-* Vercel
-
-## Getting started
-
-* Dependencies
-  - React JS
-  - React Router Dom
-  - React Icons
-  - Typescript
-  - Firebase
-
-* To install the dependencies, run this command line below in your terminal.
-  - npm install
-  <br />
-* To run the project all you have to do is run this code below in your terminal.
-  - npm start
-
-## How to use
-
-### 1 - When you access the website for the first time, you will see the login page.
+# Getting Started with Create React App
 
 ![Login Page](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/loginpage.png)
 
