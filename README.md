@@ -1,46 +1,90 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Stock Control App
+Manage your products. 
+<br /> <br />
+In this application you can manage your products by: setting new products, updating your products, reading < br/>your products and deleting them.
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Here are the technologies I used in this project.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* React-JS version  18.2.0
+* JavaScript version ES6
+* Typescript version 4.9.5
+* CSS version 3
+* HTML version 5
 
-### `npm test`
+## Services Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Github
+* Vercel
 
-### `npm run build`
+## Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Dependencies
+  - React JS
+  - React Router Dom
+  - React Icons
+  - Typescript
+  - Firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* To install the dependencies, run this command line below in your terminal.
+  - npm install
+  <br />
+* To run the project all you have to do is run this code below in your terminal.
+  - npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to use
 
-### `npm run eject`
+### 1 - When you access the website for the first time, you will see the login page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Login Page](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/loginpage.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2 - If you don't have an account, you can create yours. You just have to click on the Sign Up button in login page. This is the register page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Register Page](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/registerpage.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Now you are signed in. =D
 
-## Learn More
+### 3 - In this page you can create your new products by setting the product's name and pressing the "Register" button.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Register Products Page](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/registerproductspage.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4 - In this page you can manage your products by selecting the product, adding the amount you want to set to the product's amount and setting the type of update.
+
+![Manage Products](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/manageproductspage.png)
+
+### 5 - In this page you can see the actual status of your products.
+
+![Balance Page](https://github.com/joaofilipee/stockcontrol/blob/main/public/readme/balancepage.png)
+
+### 6 - I hope this application can help you. =D
+
+## Features
+
+The main features of the application are:
+ - You set new products;
+ - Delete your products;
+ - The changes save;
+ - You can modify the product's amount;
+ - You can see your products and it's amounts.
+
+## Links
+  - Deploy on Vercel: https://financeapp-iota.vercel.app
+  - Repository: https://github.com/joaofilipee/stockcontrol
+    - In case of sensitive bugs like security vulnerabilities, please contact
+      joao1filipe@outlook.com directly instead of using issue tracker.
+
+  ## Versioning
+
+  1.0.0.0
+
+
+  ## Author
+
+  * **João Filipe** 
+
+  Please follow github and join me!
+  Thanks for visiting me and good coding!
