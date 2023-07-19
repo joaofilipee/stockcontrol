@@ -32,7 +32,7 @@ The main features of the application are:
  - You can see your products and it's amounts.
 
 ## Links
-  - Deploy on Vercel: https://financeapp-iota.vercel.app
+  - Deploy on Vercel: https://stockcontrol-theta.vercel.app
   - Repository: https://github.com/joaofilipee/stockcontrol
     - In case of sensitive bugs like security vulnerabilities, please contact
       joao1filipe@outlook.com directly instead of using issue tracker.
