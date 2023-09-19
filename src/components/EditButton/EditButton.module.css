@@ -1,0 +1,19 @@
+.button {
+    width: 2.5em;
+    background-color: #f1f0f0;
+    border: none;
+    border-radius: 2px;
+
+    transition: all;
+    transition-duration: .2s;
+}
+
+.icon {
+    font-size: 1.2em;
+    color: rgb(83, 81, 81);
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #7190c9;
+}

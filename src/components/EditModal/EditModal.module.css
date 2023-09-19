@@ -1,0 +1,16 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: blue;
+
+    /* height: 100%; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}

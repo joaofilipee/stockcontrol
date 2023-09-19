@@ -20,7 +20,7 @@ const Balance = () => {
 
             <div className={styles.balance}>
                 <h2>Here you can see your products</h2>
-                <ShowProducts deleteOption={false}/>
+                <ShowProducts deleteOption={false} editOption={false}/>
             </div>
         </div>
 

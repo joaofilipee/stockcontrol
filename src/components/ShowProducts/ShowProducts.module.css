@@ -32,6 +32,29 @@
     border-bottom: 2px solid #f1f0f0;
 }
 
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.fadeOpen {
+    background-color: gray;
+    opacity: .8;
+    display: block;
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.fadeClose {
+    display: none;
+}
+
 @media (max-width: 591px) {
     .show_products {
         margin-top: 6em;
@@ -54,6 +77,10 @@
     .product {
         padding-right: 10px;
     }
+    .title {
+        text-align: left;
+        max-width: 500px;
+    }
 
     .products_header {
         display: flex;
@@ -61,6 +88,8 @@
 
     .amount {
         margin-right: .8em;
+        display: flex;
+        align-items: center;
     }
     
 }

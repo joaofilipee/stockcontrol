@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 // styles
 import styles from "./ShowProducts.module.css"
@@ -8,14 +8,22 @@ import { UserDocsContext } from '../../contexts/UserDocsContext'
 
 // components
 import DeleteButton from '../DeleteButton/DeleteButton'
+import EditButton from '../EditButton/EditButton'
+import EditModal from '../EditModal/EditModal'
 
 interface IShowProducts {
   deleteOption: boolean
+  editOption: boolean
 }
 
 
-const ShowProducts = ({deleteOption}: IShowProducts) => {
+const ShowProducts = ({deleteOption, editOption}: IShowProducts) => {
   const { documents } = useContext(UserDocsContext)
+  const [fadeOpen, setFadeOpen] = useState<boolean>(false)
+
+  const closeFade = () => {
+    setFadeOpen(false)
+  }
 
   return (
     <section className={styles.show_products}>
@@ -28,20 +36,28 @@ const ShowProducts = ({deleteOption}: IShowProducts) => {
           {documents?.docs && documents.docs.map(doc => (
 
             <div key={doc.id} className={styles.product}>
-              <p>{doc.data().title}</p>
+              <p className={styles.title}>{doc.data().title}</p>
 
-              {deleteOption ? <DeleteButton docId={doc.id}/> : (
-                <p className={styles.amount}>
-                  {doc.data().qty > 999 ? "999+" : 
-                  ( 
-                    doc.data().qty < -999 ? "-999" : 
-                    doc.data().qty
+              <div className={styles.buttons}>
+                {editOption && <EditButton docId={doc.id} setFadeOpen={setFadeOpen} fadeOpen={fadeOpen}/>}
+
+                {deleteOption ? <DeleteButton docId={doc.id}/> : (
+                  <p className={styles.amount}>
+                    {doc.data().qty > 999 ? "999+" : 
+                    ( 
+                      doc.data().qty < -999 ? "-999" : 
+                      doc.data().qty
+                  )}
+                  </p>
                 )}
-                </p>
-              )}
+              </div>
             </div>
           ))}
         </div>
+
+        <EditModal />
+
+        <div className={fadeOpen ? `${styles.fadeOpen}` : `${styles.fadeClose}`} onClick={closeFade}></div>
     </section>
   )
 }
