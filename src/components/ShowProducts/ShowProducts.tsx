@@ -55,9 +55,8 @@ const ShowProducts = ({deleteOption, editOption}: IShowProducts) => {
           ))}
         </div>
 
-        <EditModal />
+        <EditModal fadeOpen={fadeOpen} setFadeOpen={setFadeOpen}/>
 
-        <div className={fadeOpen ? `${styles.fadeOpen}` : `${styles.fadeClose}`} onClick={closeFade}></div>
     </section>
   )
 }

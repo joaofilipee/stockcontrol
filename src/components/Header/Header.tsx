@@ -35,6 +35,10 @@ const Header = ({ user } : NavbarProps) => {
 
     const showNavbar = () => {
         navbarRef!.current.style.width = "100%"
+
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        window.scrollTo({top: 0})
     }
 
   return (

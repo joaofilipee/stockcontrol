@@ -13,6 +13,8 @@ const Navbar = () => {
 
   const handleCloseMenu = () => {
     navbarRef!.current.style.width = "0%"
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflow = "auto";
   }
   
   return (

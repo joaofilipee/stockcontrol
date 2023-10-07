@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import { UserContextProvider } from './contexts/UserContext';
 import ProductsContextProvider from './contexts/ProductsContext';
 import UserDocsContextProvider from './contexts/UserDocsContext';
 import NavbarRefProvider from './contexts/NavbarRefContext';
+import ChangeProductContextProvider from './contexts/ChangeProductContext';
 
 
 const root = ReactDOM.createRoot(
@@ -22,7 +24,9 @@ root.render(
         <UserDocsContextProvider>
 
           <NavbarRefProvider>
+            <ChangeProductContextProvider>
             <App />
+            </ChangeProductContextProvider>
           </NavbarRefProvider>
           
         </UserDocsContextProvider>

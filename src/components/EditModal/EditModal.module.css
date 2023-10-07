@@ -1,16 +1,128 @@
-.modal {
+.modalOpen {
     position: absolute;
     top: 0;
     left: 0;
 
-    background-color: blue;
-
-    /* height: 100%; */
+    height: 100%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    text-align: center;
+
     z-index: 2;
+}
+
+.modalClose {
+    display: none;
+}
+
+.modal_description {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.modal_description h1 {
+    margin-bottom: 2em;
+}
+
+.form {
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+
+    background-color: white;
+    padding: 6em;
+
+    border-radius: 4px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.form form input {
+    height: 2.5em;
+
+    border-radius: 3px;
+    border: 1px solid #c5c5c5;
+    padding-left: .5em;
+}
+
+.fadeOpen {
+    background-color: gray;
+    opacity: .8;
+    display: block;
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.fadeClose {
+    display: none;
+}
+
+.save_button, .back_button {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(209,213,219);
+    border-radius: .5rem;
+    color: #111827;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .3rem;
+    text-align: center;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+  }
+  
+  .save_button:hover, .back_button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .save_button:focus-visible, .back_button:focus-visible {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+.buttons {
+    display: flex;
+}
+.buttons button {
+    width: 100%;
+}
+
+
+@media (max-width: 416px) {
+    .form {
+        padding: 5em;
+    }
+}
+
+
+@media (max-width: 377px) {
+    .form {
+        padding: 3em;
+    }
 }
